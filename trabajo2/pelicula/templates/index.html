@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>Local Library Home</h1>
+  <p>Welcome to <em>LocalLibrary</em>, Django website </p>
+<h2>UML Models</h2>
+    <p>An UML diagram of the site's Django model structure is shown below. </p>
+<div>
+{% load static %}
+<img src="{% static 'img/Bienvenidos.jpg' %}" alt="My image" style="width:555px;height:540px;"/>
+</div>  
+<h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Pelicula:</strong> {{ num_pelicula }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+  </ul>
+{% endblock %}
