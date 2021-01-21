@@ -15,7 +15,7 @@ class Pelicula(models.Model):
     descripcion = models.TextField(max_length=400)
     autor = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
     genero = models.ManyToManyField(Genero)
-
+    foto = models.ImageField(upload_to='static/img/', null=True, blank=True)
     def __str__(self):
         return self.titulo
 
