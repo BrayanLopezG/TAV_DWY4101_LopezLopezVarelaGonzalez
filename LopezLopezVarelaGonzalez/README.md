@@ -1,2 +1,0 @@
-# LopezLopezVarelaGonzalez
-Trabajo 2
