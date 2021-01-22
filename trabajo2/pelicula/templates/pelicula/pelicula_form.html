@@ -1,31 +1,12 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<body>
-  <div class="container-fluid">
-    <div class="contenido">
-      <br>
-      <br>
-      <h1>Ingresar Una Pelicula</h1>
-      <br>
-      <br>
-      <form action="{% url 'index' %}" method="post">
-          {% csrf_token %}        <!--proteger la información-->
-          <table>
-          {{ form.as_table }}
-          </table>
-          <div style="text-align: left;">
-          <br>
-          <br>
-          <br>
-          <button  class="btn btn-primary" type="submit" value="Registrar">Registrar</button>
-          <br>
-          </div>
-      </form>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
-  </div>
-</body>
+<h1>Local Library Crear Autor</h1>
+  <p>Welcome to <em>LocalLibrary</em>, Django website </p>
+<form action="" method="post">
+    {% csrf_token %}        <!--proteger la información-->
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Registrar" />
+</form>
 {% endblock %}
