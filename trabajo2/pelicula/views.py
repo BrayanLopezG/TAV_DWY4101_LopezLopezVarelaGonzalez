@@ -13,6 +13,18 @@ def index(request):
         'index.html'
     )
 
+def ranking(request):
+    return render(
+        request,
+        'ranking.html'
+    )
+
+def contacto(request):
+    return render(
+        request,
+        'contacto.html'
+    )
+
 class PeliculaCreate(CreateView):
     model = Pelicula
     fields = '__all__'
