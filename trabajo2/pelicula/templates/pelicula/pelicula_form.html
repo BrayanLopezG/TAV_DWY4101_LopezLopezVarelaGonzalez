@@ -8,7 +8,7 @@
       <h1>Ingresar Una Pelicula</h1>
       <br>
       <br>
-      <form action="" method="post">
+      <form action="{% url 'index' %}" method="post">
           {% csrf_token %}        <!--proteger la información-->
           <table>
           {{ form.as_table }}

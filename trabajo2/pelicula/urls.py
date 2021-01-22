@@ -3,6 +3,8 @@ from . import views
 
 urlpatterns=[ 
     path('', views.index, name='index'),
+    path('', views.contacto, name='contacto'),
+    path('', views.ranking, name='ranking'),
     path('pelicula/<int:pk>', views.PeliculaDetailView.as_view(), name='pelicula-detail'),
 ]
 
