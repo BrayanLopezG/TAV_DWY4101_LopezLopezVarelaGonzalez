@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Pelicula,Genero,Author
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
-from django.views.generic import DetailView,ListView
+from django.views.generic import DateDetailView,ListView
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -10,20 +10,21 @@ from django.views import generic
 def index(request):
     return render(
         request,
-        'index.html'
+        'index.html',
     )
 
 def ranking(request):
     return render(
         request,
-        'ranking.html'
+        'ranking.html',
     )
 
 def contacto(request):
     return render(
         request,
-        'contacto.html'
+        'contacto.html',
     )
+
 
 class PeliculaCreate(CreateView):
     model = Pelicula

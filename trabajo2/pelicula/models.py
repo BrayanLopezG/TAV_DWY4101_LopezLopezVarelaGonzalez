@@ -14,7 +14,7 @@ class Pelicula(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField(max_length=400)
     autor = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
-    genero = models.ManyToManyField(Genero)
+    genero = models.ForeignKey('Genero', on_delete=models.SET_NULL, null=True)
     def __str__(self):
         return self.titulo
 
@@ -29,7 +29,7 @@ class Author(models.Model):
         ordering = ['nombre', 'apellido']
 
     def get_absolute_url(self):
-        return reverse('author-detail', args=[str(self.id)])
+        return reverse('author_detail', args=[str(self.id)])
 
     def __str__(self):
         return f'{self.nombre}, {self.apellido}'
