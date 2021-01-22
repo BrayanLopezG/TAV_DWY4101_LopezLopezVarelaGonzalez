@@ -1,12 +1,30 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<h1>Local Library Crear Autor</h1>
-  <p>Welcome to <em>LocalLibrary</em>, Django website </p>
-<form action="" method="post">
-    {% csrf_token %}        <!--proteger la información-->
-    <table>
-    {{ form.as_table }}
-    </table>
-    <input type="submit" value="Registrar" />
-</form>
+<div class="container-fluid">
+  <div style="background-color:beige;">
+    <br>
+    <h1 style="color: brown; font-size: 60px;">Ingresar una Nueva Pelicula</h1>
+    <br>
+    <br>
+    <p style="color: chocolate; font-size: 40px;">Bienvenidos A La <em>Libreria de Peliculas </em></p>
+    <br>
+    <div style="margin-left: 10px;">
+      <form action="" method="post">
+        {% csrf_token %}
+        <!--proteger la información-->
+        <table>
+          {{ form.as_table }}
+        </table>
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="Registrar" />
+        <br>
+        <br>
+        <br>
+        <br>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
