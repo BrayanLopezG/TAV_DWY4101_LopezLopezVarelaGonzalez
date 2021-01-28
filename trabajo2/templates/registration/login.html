@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="container-fluid">
+    <div style="text-align: center;">
+        <h1 style="font-size: 70px; color: bisque;">Ingresar Credenciales</h1>
+        <br>
+        <br>
+        {% if form.errors %}
+        <p style="font-size: 30px; color: rgb(255, 0, 0);">
+            Tu Usuario o Contraseña son incorrecta. Porfavor intentar denuevo
+        </p>
+        {% endif %}
+
+        {% if next %}
+        {% if user.is_authenticated %}
+        <p>
+            Tu cuenta no tiene acceso a esta seccion. porfavor ingresar con una cuenta con acceso.
+        </p>
+        {% else %}
+        <p>
+            Porfavor Ingresar Credenciales en esta pagina.
+        </p>
+        {% endif %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div style="font-size: 20px; color: honeydew;">
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </div>
+            <br>
+            <div style="font-size: 20px; color: honeydew;">
+                <td>{{ form.password.label_tag}}</td>
+                <td>{{ form.password }}</td>
+            </div>
+            <br>
+            <br>
+            <div>
+                <input type="submit" value="login" />
+                <input type="hidden" name="next" value="{{ next }}">
+            </div>
+        </form>
+        <br>
+        <br>
+
+    </div>
+</div>
+{% endblock %}

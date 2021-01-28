@@ -25,7 +25,6 @@ def contacto(request):
         'contacto.html',
     )
 
-
 class PeliculaCreate(CreateView):
     model = Pelicula
     fields = '__all__'
@@ -43,3 +42,21 @@ class PeliculaDetailView(generic.DetailView):
 
 class PeliculaListView(ListView):
     model = Pelicula
+
+class AuthorCreate(CreateView):
+    model = Author
+    fields = '__all__'
+
+class AuthorUpdate(UpdateView):
+    model = Author
+    fields = ['nombre','apellido','fecha_producida']
+
+class AuthorDelete(DeleteView):
+    model = Author
+    success_url = reverse_lazy('index')
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
+
+class AuthorListView(ListView):
+    model = Author

@@ -91,7 +91,7 @@
       <div class="row" style="width: 100%;">
         <div class="container p-4 my-3 border col-sm-6" style="background-color: azure;">
           <h3>Registrate si quieres mas informacion</h3>
-          <form id="mi-formulario" action="index.html">
+          <form id="mi-formulario" method="POST" action="{% url 'index' %}">
 
 
             <label>Nombre Completo: </label>
@@ -112,7 +112,7 @@
 
             <label>Reingresa contraseña: </label>
             <input type="password" name="password2" minlength="6">
-            <button>Enviar</button>
+            <button type="submit">Enviar</button>
           </form>
         </div>
       </div>
